@@ -36,51 +36,65 @@
     </div>
 
     <div class="resultParas">
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
     </div>
 
     <script>
 
-     let randomNumber = Matj.floor(Math.random() * 100) + 1;
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
 
-     const guesses = document.querySelector('.guesses');
-     const lastResult = document.querySelector('.guessSubmit');
-     const lowOrHi = document.querySelector('.lowOrHi')
+            const guesses = document.querySelector('.guesses');
+            const lastResult = document.querySelector('.guessSubmit');
+            const lowOrHi = document.querySelector('.lowOrHi')
+            const guessSubmit = document.querySelector('.guessSubmit');
+            const guessField = document.querySelector('.guessField');
 
-     const guessSubmit = document.querySelector('.guessSubmit');
-     const guessField = document.querySelector('.guessField');
+            let guessCount = 1;
+            let resetButton;
 
-    function checkguess() {
-        let userGuess = Number(guessField.value);
-        if (guessCount === 1) {
-            guesses.textContent += userGuess + ' ';
-        }
+            guessField.focus();
 
-        if (user === randomNumber) {
-            lastResult.textContent = 'Congrulations! You have gottent the correct result!!';
-            lastResu.style.background.color = 'green';
-            lowOrHi.textContent = '';
-            setGameOver();
-        } else if (user !== randomNumber) {
-                lastResult.textContent = '!!! Game Over !!!';
-                setGameOver();
-        } else {
-            lastResult.textContent = 'Ssttk Ssttk Ssttk, not correct!';
-            lastresult.style.background.color = 'red';
-            if (userGuess < randomNumber ||  userGuess > randomNumber) {
-                lowOrHi.textContent = 'Last guess was too low or too high';
+            function checkguess() {
+            
+                guessSubmit.addEventListener('Click', checkGuess);
+            
+                let userGuess = Number(guessField.value);
+                if (guessCount === 1) {
+                    guesses.textContent += userGuess + ' ';
+                }
+            
+                if (user === randomNumber) {
+                    lastResult.textContent = 'Congrulations! You have gottent the correct result!!';
+                    lastResu.style.background.color = 'green';
+                    lowOrHi.textContent = '';
+                    setGameOver();
+                } else if (user !== randomNumber) {
+                        lastResult.textContent = '!!! Game Over !!!';
+                        setGameOver();
+                } else {
+                    lastResult.textContent = 'Ssttk Ssttk Ssttk, not correct!';
+                    lastresult.style.background.color = 'red';
+                    if (userGuess < randomNumber ||  userGuess > randomNumber) {
+                        lowOrHi.textContent = 'Last guess was too low or too high';
+                    }
+                }
             }
-        }
+        
+                guessCount++;
+                guessField.value = '';
+                
+        
+            /* The code on the bottom would loop therough the text content of the div resultParas and remove each individual letter, pretty cool*/
 
-        guessCount++;
-        guessField.value = '';
-        guessField.focus();
-
-    let guessCount = 1;
-    let resetButton;
-
-    </script>
-  </body>
+            function resetGame() {
+                const resetParas = document.querySelector('.resultParas p');
+                for (let i = 0; i < resetParas.length; i++) {
+                    resetParas[i].textContent = '';
+                }
+            }
+        
+            </script>
+    </body>
 </html>
