@@ -63,14 +63,20 @@
             lastResu.style.background.color = 'green';
             lowOrHi.textContent = '';
             setGameOver();
+        } else if (user !== randomNumber) {
+                lastResult.textContent = '!!! Game Over !!!';
+                setGameOver();
         } else {
-            if (user !== randomNumber) {
-                
+            lastResult.textContent = 'Ssttk Ssttk Ssttk, not correct!';
+            lastresult.style.background.color = 'red';
+            if (userGuess < randomNumber ||  userGuess > randomNumber) {
+                lowOrHi.textContent = 'Last guess was too low or too high';
             }
         }
-    }
 
-    console.log(checkguess)
+        guessCount++;
+        guessField.value = '';
+        guessField.focus();
 
     let guessCount = 1;
     let resetButton;
