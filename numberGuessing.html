@@ -52,6 +52,26 @@
      const guessSubmit = document.querySelector('.guessSubmit');
      const guessField = document.querySelector('.guessField');
 
+    function checkguess() {
+        let userGuess = Number(guessField.value);
+        if (guessCount === 1) {
+            guesses.textContent += userGuess + ' ';
+        }
+
+        if (user === randomNumber) {
+            lastResult.textContent = 'Congrulations! You have gottent the correct result!!';
+            lastResu.style.background.color = 'green';
+            lowOrHi.textContent = '';
+            setGameOver();
+        } else {
+            if (user !== randomNumber) {
+                
+            }
+        }
+    }
+
+    console.log(checkguess)
+
     let guessCount = 1;
     let resetButton;
 
