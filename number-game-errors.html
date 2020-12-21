@@ -36,18 +36,20 @@
   <p class="guesses"></p>
   <p class="lastResult"></p>
   <p class="lowOrHi"></p>
+  <p class="correctGuess"></p>
 </div>
 
 </body>
 
 <script>
-  let randomNumber = Math.floor(Math.random()) + 1;
+  let randomNumber = Math.floor(Math.random() * 100) + 1;
 
   const guesses = document.querySelector('.guesses');
   const lastResult = document.querySelector('.lastResult');
   const lowOrHi = document.querySelector('.lowOrHi');
   const guessSubmit = document.querySelector('.guessSubmit');
   const guessField = document.querySelector('.guessField');
+  const correctGuess = document.querySelector('.correctGuess');
 
   let guessCount = 1;
   let resetButton;
@@ -68,6 +70,7 @@
     } else if(guessCount === 10) {
       lastResult.textContent = '!!!GAME OVER!!!';
       setGameOver();
+      correctGuess.textContent = 'The correct guess was ' + randomNumber;
     } else {
       lastResult.textContent = 'Wrong!';
       lastResult.style.backgroundColor = 'red';
@@ -90,7 +93,7 @@
 	  resetButton = document.createElement('button');
 	  resetButton.textContent = 'Start new game';
 	  document.body.appendChild(resetButton);
-	  resetButton.addeventListener('click', resetGame);
+	  resetButton.addEventListener('click', resetGame);
   }
 
   function resetGame() {
@@ -109,7 +112,7 @@
 
 	  lastResult.style.backgroundColor = 'white';
 
-	  randomNumber = Math.floor(Math.random()) + 1;
+	  randomNumber = Math.floor(Math.random() * 100) + 1;
   }
 </script>
 </html>
