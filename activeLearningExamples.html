@@ -39,8 +39,8 @@
                     list.appendChild(listItem);
                 }
             }
-
-
+            
+            
             //Second problem about capitalizing strings
 
         const list = document.querySelector('.output ul');
@@ -51,18 +51,15 @@
             let input = cities[i];
             //write your code just below here
 
-            let lowerCaseinput = input.toLowerCase();
-
-            let firstLetter = lowerCaseInput.slice(0,1);
-
-            let firstAndLetterCombo = lowerCaseInput.replace(firstLetter,firstLetter.toUpperCase());
-
-            let result = firstAndLetterCombo;
+            let input = cities[i];
+            let lower = input.toLowerCase();
+            let firstLetter = lower.slice(0,1);
+            let capitalized = lower.replace(firstLetter,firstLetter.toUpperCase());
+            let result = capitalized;
             let listItem = document.createElement('li');
             listItem.textContent = result;
             list.appendChild(listItem);
         }
-
 
 </script>
 
