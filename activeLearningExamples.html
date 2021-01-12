@@ -51,11 +51,13 @@
             let input = cities[i];
             //write your code just below here
 
-            let lowerCaseinput = cities[i].toLowerCase();
+            let lowerCaseinput = input.toLowerCase();
 
-            let firstLetterAndFinal = cities[i].charAt(0).toUpperCase() + string.slice(1);
+            let firstLetter = lowerCaseInput.slice(0,1);
 
-            let result = firstLetterAndFinal;
+            let firstAndLetterCombo = lowerCaseInput.replace(firstLetter,firstLetter.toUpperCase());
+
+            let result = firstAndLetterCombo;
             let listItem = document.createElement('li');
             listItem.textContent = result;
             list.appendChild(listItem);
