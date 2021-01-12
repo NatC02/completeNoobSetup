@@ -13,46 +13,58 @@
         
             I clicked show solution
         
-            const list = document.querySelector('.output ul');
-list.innerHTML = '';
-let greetings = ['Happy Birthday!',
+            k
+
+
+        -->
+
+        <script>  
+        
+        const list = document.querySelector('.output ul');
+        list.innerHTML = '';
+        let greetings = ['Happy Birthday!',
                 'Merry Christmas my love',
                 'A happy Christmas to all the family',
                 'You\'re all I want for Christmas',
                 'Get well soon'];
 
-            I reviewed the code below to understand it and retyped it over
+           // I reviewed the code below to understand it and retyped it over
 
-for (let = i; i < greetings.length; i++) {
-    let input = greetings[i];
-        if (greetings[i].indexOf('Christmas') !== -1) {
-            let result = input;
-            let listenItem = document.createElement('li');
+            for (let = i; i < greetings.length; i++) {
+            let input = greetings[i];
+                if (greetings[i].indexOf('Christmas') !== -1) {
+                    let result = input;
+                    let listenItem = document.createElement('li');
+                    listItem.textContent = result;
+                    list.appendChild(listItem);
+                }
+            }
+
+
+            //Second problem about capitalizing strings
+
+        const list = document.querySelector('.output ul');
+        list.innerHTML = '';
+        let cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+
+        for (let i = 0; i < cities.length; i++) {
+            let input = cities[i];
+            //write your code just below here
+
+            let lowerCaseinput = cities[i].toLowerCase();
+
+            let numberZero = 0;
+
+            let firstLetterAndFinal = cities[i].charAt(0).toUpperCase() + string.slice(1);
+
+            let result = firstLetterAndFinal;
+            let listItem = document.createElement('li');
             listItem.textContent = result;
             list.appendChild(listItem);
         }
-    }
-
-    const list = document.querySelector('.output ul');
-list.innerHTML = '';
-let cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
-
-for (let i = 0; i < cities.length; i++) {
-    let input = cities[i];
-    //write your code just below here
-
-    let lowerCaseinput = cities[i].toLowerCase();
-
-    
-
-    let result = input;
-    let listItem = document.createElement('li');
-    listItem.textContent = result;
-    list.appendChild(listItem);
-}
 
 
-        -->
+</script>
 
     </body>
 </html>
