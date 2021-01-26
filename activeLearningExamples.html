@@ -74,8 +74,9 @@
             // write your code just below here
             
             let firstThree = input.slice(0,[2]);
-            let indexSemi = firstThree.indexOf(';');
-            let 
+            let indexSemi = input.indexOf(';');
+            let location = input.slice(indexSemi, input.length);
+            let final = firstThree + ':' + location;
 
             let result = input;
             let listItem = document.createElement('li');
